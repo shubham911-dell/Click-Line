@@ -29,7 +29,7 @@
 - **Text Selection**: Click and drag as usual — the extension snaps selection to full words. Copy with `Ctrl+C`.  
 - **Link Copying**: Hover over a link, hold `Ctrl`, then drag — the link URL is copied automatically.  
 - **Settings**: Click the extension icon to toggle on/off or change the "Word Characters" regex (default: `\w\-`).  
--
+
 ### Technical Details  
 - **Regex Word Characters**:  
   - `\w`: Letters (a–z, A–Z), digits (0–9), underscore `_`  
