@@ -35,15 +35,15 @@ Usage
 ##Link Copying:
 Hover link → Hold Ctrl + drag → URL copied to clipboard.
 
-##Settings:
+## Settings:
 Click extension icon → toggle or edit “Word Characters” (default: \w\-).
 
-##Technical Details
+## Technical Details
 Word Characters (Regex):
 
-.\w: Letters, numbers, _
+- "\w: Letters, numbers, _"
 
-.\-: Hyphen (add #@$. if needed)
+. "\-: Hyphen (add #@$. if needed)"
 
 ---
 Requirements: Chrome v88+, Windows/macOS/ChromeOS.
