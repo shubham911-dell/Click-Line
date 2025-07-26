@@ -1,90 +1,67 @@
-Word Snap Selector Chrome Extension
-Developer: Shubham Dhakal
-Version: 3.1
+# Word Snap Selector — Chrome Extension  
+**Developer:** Shubham Dhakal  
+**Version:** 3.1  
 
-Overview
-Word Snap Selector is a professional Chrome extension that enhances text selection by automatically snapping to whole words, regardless of where you start your selection. It solves the common problem of inaccurate text selection caused by touchpad sensitivity or imprecise mouse movements. The extension also provides smart link copying functionality with a simple Ctrl+drag gesture.
+---
 
-Features
-Intelligent Word Selection
-Automatically selects complete words regardless of start position
+## Overview  
+**Word Snap Selector** improves Chrome text selection by snapping to full words, solving issues caused by touchpad or mouse inaccuracy. It also offers a `Ctrl + drag` shortcut to copy link URLs instantly.
 
-Handles punctuation, special characters, and word boundaries
+---
 
-Works consistently across all websites and web applications
+## Features  
+- **Intelligent Word Selection:** Auto-selects entire words, handles punctuation, works on all sites.  
+- **Smart Link Copying:** Hold `Ctrl` + drag on links to copy URLs, with visual highlights.  
+- **Customizable:** Define custom word characters via regex, toggle on/off, settings saved.
 
-Smart Link Copying
-Copy link URLs with Ctrl+drag gesture
+---
 
-Visually highlights entire links during copying
+## Installation  
 
-Seamless integration with browser clipboard
+### From Chrome Web Store  
+1. Visit the [Chrome Web Store](#).  
+2. Click **Add to Chrome** and confirm.  
 
-Customizable Configuration
-Define custom word characters using regex syntax
-
-Toggle extension on/off as needed
-
-Settings persist between browser sessions
-
-Installation
-From Chrome Web Store
-Visit the Chrome Web Store listing
-
-Click "Add to Chrome"
-
-Confirm installation when prompted
-
-Manual Installation
-Clone or download this repository
-
-Open Chrome and navigate to chrome://extensions
-
-Enable "Developer mode" (toggle in top-right corner)
-
-Click "Load unpacked" and select the extension directory
-
-Pin the extension to your toolbar for easy access
-
+### Manual Install  
+```bash
+1. Clone/download this repo
+2. Go to: chrome://extensions
+3. Enable "Developer Mode"
+4. Load unpacked → select extension folder
 Usage
-Basic Text Selection
-Click and drag to select text as normal
+Text Selection: Drag as usual — selection auto-expands to full words (Ctrl+C to copy).
 
-Selection automatically expands to include complete words
+Link Copying: Hover link → Hold Ctrl + drag → URL copied to clipboard.
 
-Selected text can be copied with standard shortcuts (Ctrl+C)
-
-Link Copying
-Hover over any link
-
-Hold the Ctrl key
-
-Click and drag anywhere on the link
-
-The URL is copied to clipboard automatically
-
-Configuration
-Click the extension icon in your toolbar
-
-Adjust settings as needed:
-
-Toggle extension on/off
-
-Modify "Word Characters" field (default: \w\-)
-
-Click "Save Settings" to apply changes
+Settings: Click extension icon → toggle or edit “Word Characters” (default: \w\-).
 
 Technical Details
-Word Character Configuration
-The "Word Characters" setting uses regex character classes:
+Word Characters (Regex):
 
-\w: Letters (a-z, A-Z), numbers (0-9), underscores (_)
+\w: Letters, numbers, _
 
-\-: Hyphen character
+\-: Hyphen (add #@$. if needed)
 
-Add other characters as needed (e.g., $#@. for programming)
+Requirements: Chrome v88+, Windows/macOS/ChromeOS.
 
-System Requirements
-Google Chrome version 88 or newer
+Support
+Report issues: GitHub Issues
 
-Windows, macOS, or ChromeOS
+Email: support@wordsnapselector.com
+
+License
+Licensed under MIT License.
+
+About Developer
+Shubham Dhakal creates user-focused web tools and extensions.
+Connect: GitHub · LinkedIn · Portfolio
+
+© 2023 Shubham Dhakal. All rights reserved.
+
+yaml
+Copy
+Edit
+
+---
+
+Would you like me to **add a professional header image preview (with a placeholder)** to make the README
