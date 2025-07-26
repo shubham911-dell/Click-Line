@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Word Snap Selector</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 8H17M7 12H17M7 16H13M3 20H21C21.5523 20 22 19.5523 22 19V5C22 4.44772 21.5523 4 21 4H3C2.44772 4 2 4.44772 2 5V19C2 19.5523 2.44772 20 3 20Z" stroke="#4361ee" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Word Snap Selector
+      </h1>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <h2>Extension Settings</h2>
+      </div>
+      
+      <div class="setting">
+        <div class="toggle-container">
+          <label class="switch">
+            <input type="checkbox" id="toggleEnabled" checked>
+            <span class="slider"></span>
+          </label>
+          <span class="toggle-label">Enable Extension</span>
+        </div>
+      </div>
+      
+      <div class="setting">
+        <label for="wordChars">Word Characters:</label>
+        <input type="text" id="wordChars" value="\w\-" placeholder="\w\-">
+        <p class="help">Characters considered part of words (regex format)</p>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-header">
+        <h2>Features</h2>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">✓</div>
+        <div class="feature-text">
+          <h3>Word Snapping</h3>
+          <p>Automatically selects entire words regardless of where you start</p>
+        </div>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">⎘</div>
+        <div class="feature-text">
+          <h3>Link Copying</h3>
+          <p>Hold <kbd>Ctrl</kbd> + drag on any link to copy its URL</p>
+        </div>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">⚙️</div>
+        <div class="feature-text">
+          <h3>Universal Compatibility</h3>
+          <p>Works on all websites and web applications</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="actions">
+      <button id="saveBtn">Save Settings</button>
+    </div>
+    
+    <div class="footer">
+      <p>Version 3.1</p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
