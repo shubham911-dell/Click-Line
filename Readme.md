@@ -1,90 +1,42 @@
-Word Snap Selector Chrome Extension
-Developer: Shubham Dhakal
-Version: 3.1
+# Word Snap Selector — Chrome Extension  
+**Developer:** Shubham Dhakal  **Version:** 3.1  
 
-Overview
-Word Snap Selector is a professional Chrome extension that enhances text selection by automatically snapping to whole words, regardless of where you start your selection. It solves the common problem of inaccurate text selection caused by touchpad sensitivity or imprecise mouse movements. The extension also provides smart link copying functionality with a simple Ctrl+drag gesture.
+**Word Snap Selector** is a Chrome extension that enhances text selection by automatically snapping to full words, eliminating the frustration of imprecise selections caused by touchpads or shaky mouse movements. It also includes a smart link copying feature: simply hold `Ctrl` and drag over any link to instantly copy its URL.  
 
-Features
-Intelligent Word Selection
-Automatically selects complete words regardless of start position
+### Features  
+- **Intelligent Word Selection**: Snaps to whole words, even mid-drag, and handles punctuation across all websites.  
+- **Smart Link Copying**: Hold `Ctrl` + drag on any link to copy its URL to clipboard, with visual highlighting.  
+- **Customizable**: Use regex to define what counts as a word (default: `\w\-`), toggle the extension on/off, and preserve settings between sessions.  
 
-Handles punctuation, special characters, and word boundaries
+### Installation  
 
-Works consistently across all websites and web applications
+**From Chrome Web Store**  
+1. Visit the [Chrome Web Store](#)  
+2. Click **Add to Chrome** and confirm  
 
-Smart Link Copying
-Copy link URLs with Ctrl+drag gesture
+**Manual Installation**  
+1. Clone/download this repository  
+2. Go to `chrome://extensions`  
+3. Enable **Developer Mode** (top right)  
+4. Click **Load unpacked** and select the extension folder  
 
-Visually highlights entire links during copying
+### Usage  
+- **Text Selection**: Click and drag as usual — the extension snaps selection to full words. Copy with `Ctrl+C`.  
+- **Link Copying**: Hover over a link, hold `Ctrl`, then drag — the link URL is copied automatically.  
+- **Settings**: Click the extension icon to toggle on/off or change the "Word Characters" regex (default: `\w\-`).  
 
-Seamless integration with browser clipboard
+### Technical Details  
+- **Regex Word Characters**:  
+  - `\w`: Letters (a–z, A–Z), digits (0–9), underscore `_`  
+  - `\-`: Hyphen character  
+  - Add others like `#@$.` if needed  
+- **System Requirements**: Chrome v88+, works on Windows, macOS, and ChromeOS  
 
-Customizable Configuration
-Define custom word characters using regex syntax
+### Support  
+Email: [shubhamdhakal01@gmail.com](mailto:support@wordsnapselector.com)  
 
-Toggle extension on/off as needed
+### About the Developer  
+**Shubham Dhakal** builds user-focused web tools and Chrome extensions.  
+Connect:  [LinkedIn](https://www.linkedin.com/in/shubham-dhakal-b4bb21279)  
 
-Settings persist between browser sessions
 
-Installation
-From Chrome Web Store
-Visit the Chrome Web Store listing
-
-Click "Add to Chrome"
-
-Confirm installation when prompted
-
-Manual Installation
-Clone or download this repository
-
-Open Chrome and navigate to chrome://extensions
-
-Enable "Developer mode" (toggle in top-right corner)
-
-Click "Load unpacked" and select the extension directory
-
-Pin the extension to your toolbar for easy access
-
-Usage
-Basic Text Selection
-Click and drag to select text as normal
-
-Selection automatically expands to include complete words
-
-Selected text can be copied with standard shortcuts (Ctrl+C)
-
-Link Copying
-Hover over any link
-
-Hold the Ctrl key
-
-Click and drag anywhere on the link
-
-The URL is copied to clipboard automatically
-
-Configuration
-Click the extension icon in your toolbar
-
-Adjust settings as needed:
-
-Toggle extension on/off
-
-Modify "Word Characters" field (default: \w\-)
-
-Click "Save Settings" to apply changes
-
-Technical Details
-Word Character Configuration
-The "Word Characters" setting uses regex character classes:
-
-\w: Letters (a-z, A-Z), numbers (0-9), underscores (_)
-
-\-: Hyphen character
-
-Add other characters as needed (e.g., $#@. for programming)
-
-System Requirements
-Google Chrome version 88 or newer
-
-Windows, macOS, or ChromeOS
