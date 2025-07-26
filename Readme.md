@@ -23,7 +23,7 @@
 2. Click **Add to Chrome** and confirm.  
 
 ### Manual Install  
-```bash
+
 1. Clone/download this repo
 2. Go to: chrome://extensions
 3. Enable "Developer Mode"
