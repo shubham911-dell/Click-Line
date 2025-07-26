@@ -33,10 +33,10 @@
 - **System Requirements**: Chrome v88+, works on Windows, macOS, and ChromeOS  
 
 ### Support  
-Email: [support@wordsnapselector.com](mailto:support@wordsnapselector.com)  
+Email: [shubhamdhakal01@gmail.com](mailto:support@wordsnapselector.com)  
 
 ### About the Developer  
 **Shubham Dhakal** builds user-focused web tools and Chrome extensions.  
-Connect: [GitHub](#) · [LinkedIn](#) · [Portfolio](#)  
+Connect:  [LinkedIn](www.linkedin.com/in/shubham-dhakal-b4bb21279)  
 
-© 2023 Shubham Dhakal. All rights reserved.
+
