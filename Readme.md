@@ -29,18 +29,21 @@
 3. Enable "Developer Mode"
 4. Load unpacked → select extension folder
 Usage
-Text Selection: Drag as usual — selection auto-expands to full words (Ctrl+C to copy).
+##Text Selection:
+ Drag as usual — selection auto-expands to full words (Ctrl+C to copy).
 
-Link Copying: Hover link → Hold Ctrl + drag → URL copied to clipboard.
+##Link Copying:
+Hover link → Hold Ctrl + drag → URL copied to clipboard.
 
-Settings: Click extension icon → toggle or edit “Word Characters” (default: \w\-).
+##Settings:
+Click extension icon → toggle or edit “Word Characters” (default: \w\-).
 
-Technical Details
+##Technical Details
 Word Characters (Regex):
 
-\w: Letters, numbers, _
+.\w: Letters, numbers, _
 
-\-: Hyphen (add #@$. if needed)
+.\-: Hyphen (add #@$. if needed)
 
 ---
 Requirements: Chrome v88+, Windows/macOS/ChromeOS.
