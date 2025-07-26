@@ -42,26 +42,14 @@ Word Characters (Regex):
 
 \-: Hyphen (add #@$. if needed)
 
+---
 Requirements: Chrome v88+, Windows/macOS/ChromeOS.
 
-Support
-Report issues: GitHub Issues
-
+---
 Email: support@wordsnapselector.com
 
-License
-Licensed under MIT License.
-
-About Developer
-Shubham Dhakal creates user-focused web tools and extensions.
-Connect: GitHub · LinkedIn · Portfolio
-
-© 2023 Shubham Dhakal. All rights reserved.
-
-yaml
-Copy
-Edit
 
 ---
-
-Would you like me to **add a professional header image preview (with a placeholder)** to make the README
+About Developer
+Shubham Dhakal creates user-focused web tools and extensions.
+Connect:
