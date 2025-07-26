@@ -1,5 +1,6 @@
 # Word Snap Selector — Chrome Extension  
-**Developer:** Shubham Dhakal  **Version:** 3.1  
+**Developer:** Shubham Dhakal 
+**Version:** 3.1  
 
 **Word Snap Selector** is a Chrome extension that enhances text selection by automatically snapping to full words, eliminating the frustration of imprecise selections caused by touchpads or shaky mouse movements. It also includes a smart link copying feature: simply hold `Ctrl` and drag over any link to instantly copy its URL.  
 
