@@ -37,6 +37,6 @@ Email: [shubhamdhakal01@gmail.com](mailto:support@wordsnapselector.com)
 
 ### About the Developer  
 **Shubham Dhakal** builds user-focused web tools and Chrome extensions.  
-Connect:  [LinkedIn](www.linkedin.com/in/shubham-dhakal-b4bb21279)  
+Connect:  [LinkedIn](https://www.linkedin.com/in/shubham-dhakal-b4bb21279)  
 
 
