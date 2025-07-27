@@ -14,6 +14,10 @@ let config = {
 chrome.storage.local.get(null, (result) => {
   Object.assign(config, result);
 });
+chrome.storage.local.get(['enabled', 'wordChars'], (result) => {
+  config.enabled = (result.enabled !== undefined) ? result.enabled : true;
+  config.wordChars = result.wordChars || '\\w\\-';
+});
 
 // Listen for config updates
 chrome.runtime.onMessage.addListener((message) => {

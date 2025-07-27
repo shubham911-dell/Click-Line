@@ -5,25 +5,36 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Load saved settings
   chrome.storage.local.get(['enabled', 'wordChars'], (result) => {
-    toggle.checked = result.enabled !== false;
+    // Use strict boolean check for undefined
+    toggle.checked = (result.enabled !== undefined) ? result.enabled : true;
     wordCharsInput.value = result.wordChars || '\\w\\-';
   });
   
   // Save settings
-  saveBtn.addEventListener('click', () => {
+  saveBtn.addEventListener('click', saveSettings);
+  
+  // NEW: Add event listener for toggle change
+  toggle.addEventListener('change', () => {
+    saveSettings();
+  });
+  
+  // NEW: Unified save function
+  function saveSettings() {
     const enabled = toggle.checked;
     const wordChars = wordCharsInput.value;
     
     // Save to storage
     chrome.storage.local.set({ enabled, wordChars }, () => {
-      // Notify content script
-      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-        if (tabs[0]?.id) {
-          chrome.tabs.sendMessage(tabs[0].id, {
-            type: 'updateConfig',
-            enabled,
-            wordChars
-          });
+      // Notify ALL tabs, not just active one
+      chrome.tabs.query({}, (tabs) => {
+        for (const tab of tabs) {
+          if (tab.id) {
+            chrome.tabs.sendMessage(tab.id, {
+              type: 'updateConfig',
+              enabled,
+              wordChars
+            }).catch(() => {}); // Ignore errors in tabs without content script
+          }
         }
       });
       
@@ -35,5 +46,5 @@ document.addEventListener('DOMContentLoaded', () => {
         saveBtn.style.backgroundColor = '';
       }, 2000);
     });
-  });
+  }
 });
