@@ -35,7 +35,6 @@ Word Snap Selector is a Chrome extension that makes text selection and copying f
   - **ChatGPT Special Handling**: true breaks, fixes Enter-space bugs
 
 ---
-
 ## ⚙️ How It Works (Under the Hood)
 
 ### Selection
