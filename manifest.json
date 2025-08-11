@@ -1,10 +1,18 @@
 {
   "manifest_version": 3,
   "name": "Word Snap Selector",
-  "version": "3.1",
-  "description": "Perfect text selection that snaps to whole words and copies links with Ctrl",
-  "permissions": ["storage", "clipboardWrite"],
-  "host_permissions": ["<all_urls>"],
+  "version": "3.2",
+  "description": "Word snap + multi-selection highlights + link copy.",
+  "permissions": [
+    "storage",
+    "clipboardWrite",
+    "contextMenus",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "background": {
     "service_worker": "background.js"
   },
