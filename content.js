@@ -181,11 +181,25 @@ document.addEventListener('keydown', (e) => {
     lockMode = !lockMode;
     showToast(`Selection Lock: ${lockMode ? 'ON' : 'OFF'}`);
   }
+
+  // Escape clears multi-selections (quality of life)
+  if (e.key === 'Escape') {
+    if (multiSelections.length && !lockMode) {
+      clearMultiSelection();
+      repaintHighlights();
+    }
+  }
 });
 document.addEventListener('keyup', (e) => {
   if (e.key === 'Control') ctrlPressed = false;
   if (e.key === 'Shift') shiftPressed = false;
   if (e.key === 'Alt') altPressed = false;
+});
+// Safety: reset modifiers when focus leaves window (prevents “stuck Ctrl”)
+window.addEventListener('blur', () => {
+  ctrlPressed = false;
+  shiftPressed = false;
+  altPressed = false;
 });
 
 // --- Mouse Handlers ---
@@ -257,15 +271,32 @@ document.addEventListener('mouseup', (e) => {
   repaintHighlights();
 }, true);
 
-// Click anywhere clears multi-selection (unless locked or with modifiers)
+// Helper: determine if this is a plain interaction without modifiers
+function isPlainInteraction(e) {
+  return !(e.ctrlKey || e.shiftKey || e.altKey || e.metaKey);
+}
+
+// Clear multi selections on plain pointer down anywhere (unless locked)
+document.addEventListener('pointerdown', (e) => {
+  if (!config.enabled) return;
+  if (lockMode) return;
+  if (e.button !== 0) return; // left click/tap only
+  if (!isPlainInteraction(e)) return; // ignore when modifiers held
+  if (!multiSelections.length) return;
+
+  clearMultiSelection();
+  repaintHighlights();
+}, true);
+
+// Fallback: also clear on plain click (in case pointerdown was prevented by page)
 document.addEventListener('click', (e) => {
   if (!config.enabled) return;
   if (lockMode) return;
-  if (ctrlPressed || shiftPressed || altPressed) return;
-  if (multiSelections.length > 0) {
-    clearMultiSelection();
-    repaintHighlights();
-  }
+  if (!isPlainInteraction(e)) return;
+  if (!multiSelections.length) return;
+
+  clearMultiSelection();
+  repaintHighlights();
 }, true);
 
 // --- Selection helpers ---
@@ -326,6 +357,7 @@ function deferSnapCurrentSelection(tries = 2) {
   if (!sel || !sel.rangeCount) return;
   const original = sel.getRangeAt(0).cloneRange();
   const snapped = snapRangeToWords(original);
+
   const apply = () => {
     const s = window.getSelection(); if (!s) return;
     s.removeAllRanges(); s.addRange(snapped.cloneRange());
@@ -431,6 +463,7 @@ window.addEventListener('resize', () => {
 
 // --- Copy combined multi-selection text on Ctrl+C ---
 document.addEventListener('copy', (e) => {
+  if (!config.enabled) return;
   if (!ctrlPressed) return;
   if (multiSelections.length === 0) return;
   if (isEditable(e.target)) return;
