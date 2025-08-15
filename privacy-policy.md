@@ -1,6 +1,6 @@
 # Privacy Policy — Click-Line
 
-**Effective date:** 2025-08-1
+**Effective date:** 
 **Contact:** 1theflow01@gmail.com
 
 Click-Line is a Chrome extension that improves text selection and chat input ergonomics across the web. This policy explains what data the extension handles. In short: the extension does **not** collect, transmit, sell, or share personal data. All processing happens locally in your browser.
