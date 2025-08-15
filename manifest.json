@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Word Snap Selector",
-  "version": "3.2",
+  "name": "Click-Line",
+  "version": "3.3",
   "description": "Word snap + multi-selection highlights + link copy.",
   "permissions": [
     "storage",
@@ -10,20 +10,12 @@
     "scripting",
     "activeTab"
   ],
-  "host_permissions": [
+  "optional_host_permissions": [
     "<all_urls>"
   ],
   "background": {
     "service_worker": "background.js"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_start",
-      "all_frames": true
-    }
-  ],
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -38,5 +30,11 @@
     "32": "icons/icon32.png",
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
-  }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }

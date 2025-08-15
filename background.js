@@ -1,4 +1,5 @@
-// Background service worker: context menus + open searches
+// background.js
+
 const IDS = {
   GOOGLE: 'wss_google',
   YT: 'wss_yt',
@@ -17,6 +18,18 @@ chrome.runtime.onInstalled.addListener(() => {
   });
 });
 
+async function ensureInjected(tabId) {
+  if (!tabId) return;
+  try {
+    await chrome.scripting.executeScript({
+      target: { tabId, allFrames: true },
+      files: ['content.js']
+    });
+  } catch (e) {
+    // ignore errors if already injected or not allowed on this page
+  }
+}
+
 function openTabsForQueries(queries, prefix) {
   for (const q of queries) {
     if (!q || !q.trim()) continue;
@@ -24,9 +37,15 @@ function openTabsForQueries(queries, prefix) {
   }
 }
 
-chrome.contextMenus.onClicked.addListener((info, tab) => {
+chrome.contextMenus.onClicked.addListener(async (info, tab) => {
   if (!tab || !tab.id) return;
+
+  await ensureInjected(tab.id);
+
   chrome.tabs.sendMessage(tab.id, { type: 'getSelections' }, (resp) => {
+    // ignore lastError to prevent "Unchecked runtime.lastError"
+    chrome.runtime.lastError;
+
     const selections = resp && resp.selections ? resp.selections.map(s => s.text) : [];
     if (info.menuItemId === IDS.GOOGLE) {
       const q = selections.join(' ');
