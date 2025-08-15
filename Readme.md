@@ -1,9 +1,9 @@
-# Word Snap Selector — Chrome Extension
+# Click-Line — Chrome Extension
 
 **Developer:** Shubham Dhakal  
-**Version:** 3.2
+**Version:** 3.3
 
-Word Snap Selector is a Chrome extension that makes text selection and copying feel precise and fast. It also adds a universal “chat enter” behavior that you can control globally, per-site, and per-page.
+Click-Line is a Chrome extension that makes text selection and copying feel precise and fast. It also adds a universal “chat enter” behavior that you can control globally, per-site, and per-page.
 
 ---
 
